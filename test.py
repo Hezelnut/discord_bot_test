@@ -116,5 +116,7 @@ a = 'MTA4NTc4MzcwODczMDE0Mjc1MA.GFR6w8.'
 b = 'Pe8uEdvWDmM3c4uxWr25ZqUax1nKfCPy7oh-uc'
 if hosting :   
     app.run(a+b)
+    st.write('Hosting complete')
+    st.write(a+b)
 else:
     pass
