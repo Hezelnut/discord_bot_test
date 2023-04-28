@@ -4,6 +4,7 @@ import random
 from discord.ext import commands
 from discord.ui import Button, View
 import streamlit as st
+import asyncio
 
 st.set_page_config(
     page_title="discord_server_test",
@@ -94,8 +95,6 @@ async def 버튼(ctx):
         await interaction.response.send_message('5번 버튼 클릭!')
 
 
-
-
     button1.callback = button_callback1
     button2.callback = button_callback2
     button3.callback = button_callback3
@@ -109,14 +108,13 @@ async def 버튼(ctx):
     view.add_item(button3)
     view.add_item(button4)
     view.add_item(button5)
-    view.on_timeout()
 
     await ctx.send(embed = discord.Embed(title='메뉴 선택하기',description="원하시는 버튼을 클릭해주세요", colour=discord.Colour.blue()), view=view)
 a = 'MTA4NTc4MzcwODczMDE0Mjc1MA.GFR6w8.'
 b = 'Pe8uEdvWDmM3c4uxWr25ZqUax1nKfCPy7oh-uc'
 if hosting :   
     app.run(a+b)
-    st.write('Hosting complete')
-    st.write(a+b)
+    asyncio.sleep(86400)
+    app.run(a+b)
 else:
     pass
